@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+    @apply rounded p-8 bg-stone-900 text-white
+}
+
+.sub-card {
+    @apply rounded-lg p-4 bg-black text-white bg-stone-700
+}
+
+label {
+    @apply text-xs text-white opacity-75 px-2;
+}
+
+.card-title {
+    @apply text-white font-extralight text-3xl border-stone-500 border-b-2 py-2 border-opacity-25 mb-2
+}
+
+.subtitle {
+    @apply text-white font-extralight text-xl border-zinc-500 border-b py-1 border-opacity-25
+}
+
+input {
+    @apply p-4 rounded-lg bg-stone-600 transition px-6 text-stone-200 w-full my-1;
+}
+
+select {
+    @apply p-4 rounded-lg bg-stone-600 transition px-6 text-stone-200 w-full ;
+}
+
+.formContainer {
+    @apply flex w-2/4 place-content-center md:flex-row flex-col items-center mt-4
+}
+
+.autocomplete {
+    @apply w-full text-white py-2 px-4 my-4 opacity-50 hover:opacity-75 transition rounded bg-white
+}
+
+.autocompleted {
+    @apply block my-1 text-zinc-500 transform hover:scale-105 w-full opacity-75 hover:text-black transition cursor-pointer font-semibold
+}
+
+button {
+    @apply bg-stone-800 my-4 px-4 text-white font-semibold p-2 rounded w-full transition opacity-75 hover:opacity-100
+}
+
+.label {
+    @apply bg-white relative
+}
+
+.header {
+    -webkit-print-color-adjust: exact;
+    @apply bg-stone-600 flex justify-between p-2 text-white
+}
+
+.main, .footer {
+    @apply flex justify-between text-stone-600 p-6
+}
+
+.footer {
+    @apply place-items-end
+}
+
+.name, .flight-no {
+    @apply font-bold text-6xl
+}
+
+.path {
+    @apply flex gap-2 font-bold text-4xl
+}
+
+.wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.bg {
+  opacity: 0.1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 120%;
+  fill: white;
+  transform: scaleX(-1);
+}
+
+.cut {
+    @apply my-4 text-center
+}
+
+.saved {
+    @apply w-full grid grid-cols-5 gap-2 text-white py-2 px-4 my-4 opacity-50 hover:opacity-75 transition rounded bg-white
+}
+
+.saved-entry {
+    @apply inline my-1 text-zinc-500 transform hover:scale-105 w-full opacity-75 hover:text-black transition cursor-pointer font-semibold
+}
+
+.back {
+    @apply w-2/4 mb-2 text-white text-sm font-extralight opacity-50 hover:opacity-75 transition cursor-pointer text-left block;
+}
+
+.progress-container {
+    @apply w-2/4 mb-4 bg-gray-200 rounded-full dark:bg-gray-700
+}
+
+.progress {
+    @apply bg-white text-xs font-medium text-stone-900 text-center p-0.5 leading-none rounded-full
+}
+
+.arrow {
+    @apply flex place-items-center text-3xl mx-4 opacity-50
+}
+
