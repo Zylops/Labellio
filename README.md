@@ -36,12 +36,11 @@ A web app that helps you easily create labels for your baggage while travelling 
 ---
 
 ## Run Locally 🗄
-As of the release of v2, labellio has been rewritten in Sveltekit, although currently it can be fully functional on svelte, I have migrated it to sveltekit so as to make room for further improvement. Here's how you can try it out locally:
+As of the release of v2, labellio has been rewritten in Sveltekit, ~~although currently it can be fully functional on svelte~~, I have migrated it to sveltekit so as to make room for further improvement. Here's how you can try it out locally:
 ```bash
-git clone https://github.com/Zylops/Labellio.git .
-cd Labellio
+git clone https://github.com/Zylops/Labellio.git labellio
+cd labellio
 npm install
-npm run build #OPTIONAL: if a build is not present in the public folder for some reason.
 npm run start
  ```
  
@@ -50,16 +49,7 @@ npm run start
 ---
 
 ## Contributing 🤝
-Contributions are always welcome! Just send a Pull Request. Here's how to setup a dev environment:
-
-```bash
-git clone https://github.com/Zylops/Labellio .
-cd Labellio
-npm install
-npm run dev
-```
-
-Any changes you make will be immediately reflected in the preview (upon saving) on localhost:5000, including css.
+Contributions are always welcome! Just send a Pull Request.
 
 Create a pull request and there's a 99% percent chance ill approve it!
 
