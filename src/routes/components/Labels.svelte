@@ -1,6 +1,18 @@
 <script>
-    
+    import { PUBLIC_URL, PUBLIC_QR_API } from '$env/static/public'
     export let info, flightInfo;
+
+    function generateUrl() {
+        let url = PUBLIC_URL
+        url = url + '?flightNo=' + flightInfo.flightNo
+        url = url + '&from=' + flightInfo.departure
+        url = url + '&to=' + flightInfo.arrival
+        url = url + '&name=' + info.name
+        url = url + '&phone=' + info.phone
+        url = url + '&email=' + info.email
+        return url
+    }
+
 </script>
 
 <div class="wrap">
@@ -24,7 +36,7 @@
                 <p>➔</p>
                 <div class="to">{flightInfo.arrival}</div>
             </div>
-            <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=Example" alt=""></div>
+            <div class="qr"><img alt="Generating QR Code..." src="{PUBLIC_QR_API}{generateUrl()}"></div>
         </div>
     </div>
 

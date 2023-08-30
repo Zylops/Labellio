@@ -39,10 +39,18 @@
         })
     }
 
-    console.log('store: ', $infoStore)
-
     function select(index, passenger) {
         passengers[index] = passenger;
+    }
+
+    function removePassenger(index) {
+        let removed = []
+        passengers.forEach((p) => {
+            if (passengers.indexOf(p) !== index) {
+                removed = [p, ...removed]
+            }
+        })
+        passengers = removed;
     }
 </script>
 
@@ -56,7 +64,10 @@
         <div class="add sub-card mt-4">
             
             <form class="mt-2">
-                <h2 class="subtitle mb-2 mt-2">Traveler {passengers.indexOf(p)}</h2>
+                <div class="flex justify-between place-items-center">
+                    <h2 class="subtitle mb-2 mt-2">Traveler {passengers.indexOf(p)}</h2>
+                    <p on:click={() => {removePassenger(i)}} class="opacity-75 hover:opacity-100 cursor-pointer transition">❌</p>
+                </div>
 
                 <details class="my-2">
                     <summary>
@@ -90,5 +101,5 @@
         </div>
     {/each}
 
-    <button on:click={pushInfo}>Next</button>
+    <button class="mt-4" on:click={pushInfo}>Next</button>
 </div>

@@ -1,11 +1,13 @@
 <script>
-    import Labels from './Labels.svelte'
-    import Header from './comp/Header.svelte'
-    import Footer from './comp/Footer.svelte'
+    import Labels from './components/Labels.svelte'
+    import Header from './components/Header.svelte'
+    import Footer from './components/Footer.svelte'
     import { infoStore } from '$lib/info'
-    import FromToSelector from './comp/FromToSelector.svelte';
-    import AddTravellers from './comp/AddTravellers.svelte';
-    import NumberOfBags from './comp/NumberOfBags.svelte';
+    import FromToSelector from './components/FromToSelector.svelte';
+    import AddTravellers from './components/AddTravellers.svelte';
+    import NumberOfBags from './components/NumberOfBags.svelte';
+
+    $infoStore.stage = 0;
 
     function goBack() {
         if ($infoStore.stage != 0) {
@@ -17,9 +19,14 @@
         }
     }
 
-    function getPercent() {
-        return Math.round((($infoStore.stage+1)/4)*100)
+    function getPercent(num) {
+        let percent = Math.round(((num+1)/4)*100)
+        return percent;
     }
+
+    
+
+    
 </script>
 
 
@@ -29,25 +36,27 @@
 
     <Header/>
         
-    <p on:click={goBack} class="back">⬅ Back</p>
-    <div class="progress-container">
-        <div class="progress" style="width: {getPercent()}%"> {getPercent()}%</div>
+    <div class="flex justify-between w-2/4 mb-2 text-white text-sm font-extralight ">
+        <!-- <p class="theme">Theme</p> -->
+    </div>
+    <div class="progress-container w-full">
+        <div class="progress" style="width: {getPercent($infoStore.stage)}%"><p on:click={goBack} class="back inline">⬅ Back | </p> {getPercent($infoStore.stage)}%</div>
     </div>
 
-                <div class="formContainer">
-                    {#if $infoStore.stage == 0}
-                        <div class="fromTo">
-                            <FromToSelector/>
-                        </div>
-                    {:else if $infoStore.stage == 1}
-                            <AddTravellers/>
-                    {:else if $infoStore.stage == 2}
-                            <NumberOfBags/>
-                    {/if}
-                </div>
-                <Footer/> 
-                
-            </main>
+    <div class="formContainer">
+        {#if $infoStore.stage == 0}
+            <div class="fromTo">
+                <FromToSelector/>
+            </div>
+        {:else if $infoStore.stage == 1}
+                <AddTravellers/>
+        {:else if $infoStore.stage == 2}
+                <NumberOfBags/>
+        {/if}
+    </div>
+    <Footer/> 
+    
+</main>
 {:else}
     {#each $infoStore.passengers as p}
         {#each Array($infoStore.tags) as _}

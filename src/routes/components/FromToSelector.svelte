@@ -37,7 +37,7 @@
     <form class="mt-4">
         <label for="flightNo">Flight Number? (IATA Code)</label>
         <input type="text" required bind:value={flightNo} name="flightNo" placeholder="(eg. AB123)">
-        <div class="airport mt-2 flex justify-between gap-2">
+        <div class="airport mt-2 md:flex justify-between gap-2">
             <div class="departure">
                 <label for="from">Departing from? (Airport Code)</label>
                 <input type="text" required bind:value={departure} name="from" placeholder="start typing names to search">
@@ -73,6 +73,6 @@
             </div>
         {/if}
 
-        <button on:click={pushInfo}>Next</button>
+        <button class="mt-4" on:click={pushInfo}>Next</button>
     </form>
 </div>

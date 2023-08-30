@@ -3,6 +3,6 @@ import { writable } from "svelte/store";
 export const infoStore = writable({
     flightInfo: {},
     passengers: [{}],
-    tags: 0,
+    tags: 1,
     stage: 0
 });

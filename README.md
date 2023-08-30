@@ -24,12 +24,14 @@ A web app that helps you easily create labels for your baggage while travelling 
 
 ## TODO ✅
 - [ ] Hosting 
-- [ ] Label reporting and status
-- [ ] Adding multiple passengers
-- [ ] Adding transit routes
+- [X] QR Code leads to actual functional route
+- [X] Valid QR Codes generated
+- [X] Responsiveness
+- [X] Label reporting and status
+- [X] Adding multiple passengers
+- [X] Adding transit routes
 - [X] Dark and Light Mode Toggle
 - [X] Actually implementing label generation
-- [X] Mobile/Tablet friendliness 
 
 ---
 

@@ -1,6 +1,6 @@
 <script>
     import { infoStore } from '$lib/info'
-    let tags = 0;
+    let tags = 1;
     let save = false;
 
     function generate() {
@@ -41,6 +41,6 @@
             </div>
         </div>
 
-        <button on:click={generate}>Generate</button>
+        <button class="mt-4" on:click={generate}>Generate</button>
     </form>
 </div>
