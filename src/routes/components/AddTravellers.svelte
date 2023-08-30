@@ -12,15 +12,16 @@
     function getPassengers() {
         if (localStorage.getItem('passengers')) {
             let ls = localStorage.getItem('passengers')
-            let answer = [];
-            answer = ls.split('.')
+            let answer = ls.split('|');
 
+            
             answer = answer.filter((a) => a != "")
-
+            console.log(answer)
+            
             answer.forEach((a, i) => {
                 answer[i] = JSON.parse(a)
             })
-
+            
             return answer;
         }
         else return []
@@ -35,6 +36,10 @@
             let copy = d;
             copy.passengers = passengers
             copy.stage = 2;
+            copy.passengers.forEach((p) => {
+                p.phone = p.phone.trim()
+                p.email = p.email.trim()
+            })
             return copy
         })
     }
@@ -90,7 +95,7 @@
                 <div class="contact flex justify-between gap-2">
                     <div class="phone">
                         <label for="phone">Phone</label>
-                        <input type="tel" bind:value={p.phone} name="phone" placeholder="Seperate with comma for multiple #s">
+                        <input type="tel" bind:value={p.phone} name="phone">
                     </div>
                     <div class="email">
                         <label for="email">Email</label>

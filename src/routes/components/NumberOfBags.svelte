@@ -14,7 +14,7 @@
         function getPassengers() {
             let answer = ''
             $infoStore.passengers.forEach((p) => {
-                answer = JSON.stringify(p) + '.' + answer
+                answer = JSON.stringify(p) + '|' + answer
             })
             return answer;
         }
