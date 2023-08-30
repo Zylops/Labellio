@@ -36,7 +36,7 @@ A web app that helps you easily create labels for your baggage while travelling 
 ---
 
 ## Run Locally 🗄
-As of the release of v2, labellio has been rewritten in Sveltekit, although currently it can be fully functional on svelte, I have migrated it to sveltekit so as to make room for further improvement. Here's how you can try it out locally:
+As of the release of v2, labellio has been rewritten in Sveltekit, ~~although currently it can be fully functional on svelte~~, I have migrated it to sveltekit so as to make room for further improvement. Here's how you can try it out locally:
 ```bash
 git clone https://github.com/Zylops/Labellio.git .
 cd Labellio
