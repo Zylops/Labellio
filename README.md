@@ -27,10 +27,10 @@ A web app that helps you easily create labels for your baggage while travelling 
 - [X] QR Code leads to actual functional route
 - [X] Valid QR Codes generated
 - [X] Responsiveness
-- [X] Label reporting and status
+- [ ] Label reporting and status
 - [X] Adding multiple passengers
-- [X] Adding transit routes
-- [X] Dark and Light Mode Toggle
+- [ ] Adding transit routes
+- [ ] Dark and Light Mode Toggle
 - [X] Actually implementing label generation
 
 ---
