@@ -10,28 +10,27 @@
 	<a href="https://github.com/Zylops/Labellio"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Zylops/Labellio?style=social" /></a>
 </p>
 
-A web app that helps you easily create labels for your baggage while travelling through an airport.
+Labellio is a web application developed with SvelteKit, designed to simplify the lives of travelers. It allows users to effortlessly create custom labels that can be attached to luggage boxes and other travel essentials. Recently, the project has been rewritten from Svelte to SvelteKit for enhanced performance and maintainability.
 
-- Bag tags, also known as baggage tags, baggage checks or luggage tickets, have traditionally been used by bus, train, and airline carriers to identify checked luggage to its final destination.
+---
 
-- This is useful to aid the passenger in identifying their bag among similar bags at the destination baggage carousel;
-
-- Can be used as proof—still requested at a few airports—that the passenger is not removing someone else's bag from the baggage reclaim hall;
-
-- As a means for the passenger and carrier to identify and trace a specific bag that has gone astray and was not delivered at the destination.
-
+## Changelog for v2.0.0 📜
+- There is now autocomplete for departure and arrival airport codes, and you can search for them by name.
+- UI is now less overwhelming and neater.
+- Multiple passengers are now supported.
+- You can now save passenger information to localstorage, and reuse passengers every session. (makes it more efficient for users who travel often)
+- QR codes on labels actually do something now, as every label's QR code redirects to an endpoint to display label information with a way to contact the label owner.
+- Label layout is now rendered fully in HTML, no more rasterized canvas elements, easily rendered and adaptable to any print paper size.
+- There's a progress bar now.
 ---
 
 ## TODO ✅
 - [ ] Hosting 
-- [X] QR Code leads to actual functional route
-- [X] Valid QR Codes generated
-- [X] Responsiveness
 - [ ] Label reporting and status
-- [X] Adding multiple passengers
+- [ ] Label themes
+- [ ] Local information from both airports(?)
 - [ ] Adding transit routes
 - [ ] Dark and Light Mode Toggle
-- [X] Actually implementing label generation
 
 ---
 
