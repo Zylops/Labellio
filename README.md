@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://labellio.netlify.app"><img style="width: 80%;" src="https://svgshare.com/i/bdH.svg"/></a>
+<a href="/"><img style="width: 80%;" src="https://github.com/Zylops/Labellio/blob/master/static/labellio_white.png"/></a>
 </p>
 
 <p align="center">
