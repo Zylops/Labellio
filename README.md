@@ -10,7 +10,9 @@
 	<a href="https://github.com/Zylops/Labellio"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Zylops/Labellio?style=social" /></a>
 </p>
 
+<p align="center">
 Labellio is a web application developed with SvelteKit, designed to simplify the lives of travelers. It allows users to effortlessly create custom labels that can be attached to luggage boxes and other travel essentials. Recently, the project has been rewritten from Svelte to SvelteKit for enhanced performance and maintainability.
+</p>
 
 ---
 
