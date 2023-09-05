@@ -58,13 +58,7 @@
     
 </main>
 {:else}
-    {#each $infoStore.passengers as p}
-        {#each Array($infoStore.tags) as _}
-            <p class="cut">---------------------✂----------------------</p>
-            <Labels info={p} flightInfo={$infoStore.flightInfo}></Labels>
-            <p class="cut">---------------------✂----------------------</p>
-        {/each}
-    {/each}
+    <Labels />
 {/if}
 
 <style>

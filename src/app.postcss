@@ -54,12 +54,21 @@ select {
     @apply block my-1 text-zinc-500 transform hover:scale-105 w-full opacity-75 hover:text-black transition cursor-pointer font-semibold
 }
 
-button {
+button, .button {
     @apply bg-stone-800 px-4 text-white font-semibold p-2 rounded w-full transition opacity-75 hover:opacity-100
 }
 
 .label {
-    @apply bg-white relative
+    @apply bg-white relative border-y-2 border-gray-200 border-dashed 
+}
+
+.label {
+    overflow: hidden;
+    position: relative;
+}
+
+.label-action {
+    @apply p-4 bg-stone-500 text-white
 }
 
 .header {
@@ -83,18 +92,13 @@ button {
     @apply flex gap-2 font-bold text-4xl
 }
 
-.wrap {
-  overflow: hidden;
-  position: relative;
-}
-
 .bg {
   opacity: 0.1;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  height: 120%;
+  height: 180%;
   fill: white;
   transform: scaleX(-1);
 }

@@ -1,44 +1,43 @@
 <script>
-    import { PUBLIC_URL, PUBLIC_QR_API } from '$env/static/public'
-    export let info, flightInfo;
+    import Label from './Label.svelte';
 
-    function generateUrl() {
+    import { PUBLIC_URL, PUBLIC_QR_API } from '$env/static/public'
+    import { infoStore } from '$lib/info.js'
+
+    let flightInfo = $infoStore.flightInfo
+
+    function generateUrl(passenger, flightInfo) {
         let url = PUBLIC_URL
+        console.log(flightInfo)
         url = url + '?flightNo=' + flightInfo.flightNo
         url = url + '&from=' + flightInfo.departure
         url = url + '&to=' + flightInfo.arrival
-        url = url + '&name=' + info.name
-        url = url + '&phone=' + info.phone
-        url = url + '&email=' + info.email
+        url = url + '&name=' + passenger.name
+        url = url + '&phone=' + passenger.phone
+        url = url + '&email=' + passenger.email
         return url
+    }
+
+    function generateQR(passenger) {
+        let qr = PUBLIC_QR_API + generateUrl(passenger, flightInfo)
+        console.log(qr)
+        return qr
     }
 
 </script>
 
-<div class="wrap">
-    <div class="label" style="">
-        <div class="header">
-            <img src="labellio_white.png" class="w-24" alt="labellio">
-            <p>Package Label</p>
-        </div>
-        <div class="main">
-            <div class="passenger">
-                <h1 class="name">{info.name}</h1>
-                <p class="details">{info.phone}, {info.email}</p>
-            </div>
-            <div class="flight-no">
-                <h1>{flightInfo.flightNo}</h1>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="path">
-                <div class="from">{flightInfo.departure}</div>
-                <p>➔</p>
-                <div class="to">{flightInfo.arrival}</div>
-            </div>
-            <div class="qr"><img alt="Generating QR Code..." src="{PUBLIC_QR_API}{generateUrl()}"></div>
-        </div>
-    </div>
+<div class="flex justify-center p-4 gap-4 print:hidden">
+<!-- #TODO: Try again button leads to already filled forms as GET params -->
+<form action="/" data-sveltekit-reload class="w-2/4">
+    <button class="label-action">Try again? ♻</button>
+</form>
+    <button on:click|preventDefault={() => {print()}} class="label-action">Print 🖨</button>
+</div>
 
-    <img src="bg.svg" alt="" class="bg">
+<div class="wrap">
+    {#each $infoStore.passengers as p}
+        {#each Array($infoStore.tags) as _}
+            <Label passenger={p} flightInfo={flightInfo} url="{generateQR(p)}"></Label>
+        {/each}
+    {/each}
 </div>
