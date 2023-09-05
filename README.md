@@ -17,13 +17,14 @@ Labellio is a web application developed with SvelteKit, designed to simplify the
 ---
 
 ## Changelog for v2.0.0 📜
-- There is now autocomplete for departure and arrival airport codes, and you can search for them by name.
 - UI is now less overwhelming and neater.
+- There is now autocomplete for departure and arrival airport codes, and you can search for them by name.
 - Multiple passengers are now supported.
 - You can now save passenger information to localstorage, and reuse passengers every session. (makes it more efficient for users who travel often)
 - QR codes on labels actually do something now, as every label's QR code redirects to an endpoint to display label information with a way to contact the label owner.
 - Label layout is now rendered fully in HTML, no more rasterized canvas elements, easily rendered and adaptable to any print paper size.
 - There's a progress bar now.
+- Print dialogue can now be prompted from UI
 ---
 
 ## TODO ✅
