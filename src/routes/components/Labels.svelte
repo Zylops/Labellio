@@ -8,21 +8,19 @@
     let flightInfo = $infoStore.flightInfo
 
     function generateUrl(passenger, flightInfo) {
-        let url = PUBLIC_URL
-        console.log(flightInfo)
+        let url = PUBLIC_URL + '/info'
         url = url + '?flightNo=' + flightInfo.flightNo
         url = url + '&from=' + flightInfo.departure
         url = url + '&to=' + flightInfo.arrival
         url = url + '&name=' + passenger.name
         url = url + '&phone=' + passenger.phone
         url = url + '&email=' + passenger.email
-        return url
+        return encodeURIComponent(url)
     }
 
     function generateQR(passenger) {
         let api = PUBLIC_QR_API.replace('INSERT', rgb[passenger.theme])
         let qr = api + generateUrl(passenger, flightInfo)
-        console.log(qr)
         return qr
     }
 
