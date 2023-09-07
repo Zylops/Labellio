@@ -24,29 +24,34 @@
     
 </script>
 
-
-{#if $infoStore.stage != 3}
-
-<main class="grid grid-cols-1 place-items-center">
-
-    <Header/>
+<div class="grid grid-cols-1 place-items-center">
+    <div><Header/></div>
         
     <div class="flex justify-between w-2/4 mb-2 text-white text-sm font-extralight ">
         <!-- <p class="theme">Theme</p> -->
     </div>
     <div class="progress-container w-full">
-        <div class="progress" style="width: {getPercent($infoStore.stage)}%"><p on:click={goBack} class="back inline">⮌</p> {getPercent($infoStore.stage)}%</div>
+        <div class="progress" in:fly style="width: {getPercent($infoStore.stage)}%"><p on:click={goBack} class="back inline">⮌</p> {getPercent($infoStore.stage)}%</div>
     </div>
+</div>
+
+{#if $infoStore.stage != 3}
+
+<main class="grid grid-cols-1 place-items-center">
 
     <div class="formContainer">
         {#if $infoStore.stage == 0}
-            <div class="fromTo">
+            <div>
                 <FromToSelector/>
             </div>
         {:else if $infoStore.stage == 1}
+            <div>
                 <AddTravellers/>
+            </div>
         {:else if $infoStore.stage == 2}
+            <div>
                 <NumberOfBags/>
+            </div>
         {/if}
     </div>
     <Footer/> 

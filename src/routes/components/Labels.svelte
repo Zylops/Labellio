@@ -27,8 +27,7 @@
 
 </script>
 
-<div class="preprint my-16 print:hidden">
-    <Header/>
+<div class="preprint mb-16 print:hidden">
     <div class="disclaimers mt-8">
         <p class="text-center text-white font-extralight">Labels may look wierd as they are not meant to be viewed on sizes bigger than standard paper sizes.</p>
         <p class="text-center text-white opacity-25 font-extralight text-sm">Please wait until the QR is generated.</p>
