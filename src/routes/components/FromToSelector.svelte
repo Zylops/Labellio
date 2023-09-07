@@ -27,6 +27,15 @@
         autocomplete = false;
     }
 
+    function switchDestination() {
+        console.log(arrival, departure)
+        let arrCopy = arrival
+        let depsCopy = departure
+        arrival = depsCopy
+        departure = arrCopy
+        console.log(arrival, departure)
+    }
+
     $: getArrival(arrival);
     $: getDeparture(departure);
     $: autocomplete = true;
@@ -43,7 +52,7 @@
                 <input type="text" required bind:value={departure} name="from" placeholder="start typing names to search">
             </div>
 
-            <p class="arrow">⇌</p>
+            <p class="arrow" on:click={switchDestination}>⇌</p>
 
             <div class="arrival">
                 <label for="to">Arriving at? (Airport Code)</label>
@@ -63,8 +72,6 @@
                         {/each}
                     </div>
                 {/if}
-
-                <p></p>
 
                 {#if (arrival != '') }
                     <div class="autocomplete">
