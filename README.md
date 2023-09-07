@@ -23,7 +23,7 @@ Labellio is a web application developed with SvelteKit, designed to simplify the
 - You can now save traveler information to localstorage, and reuse passengers every session. (makes it more efficient for users who travel often)
 - QR codes on labels actually do something now, as every label's QR code redirects to an endpoint to display label information with a way to contact the label owner.
 - Label layout is now rendered fully in HTML, no more rasterized canvas elements, easily rendered and adaptable to any print paper size.
-- There's a progress bar now.
+- There's a functional progress bar now, which can be used to go back and edit your label from any stage of creation.
 - Print dialogue can now be prompted from UI.
 - Each added traveler can now have a theme for their labels, for easier identification if printed in color.
 ---
@@ -34,6 +34,7 @@ Labellio is a web application developed with SvelteKit, designed to simplify the
 - [ ] Local information from both airports(?)
 - [ ] Adding transit routes
 - [ ] Dark and Light Mode Toggle
+- [ ] Add more code comments for documentation
 
 ---
 

@@ -43,7 +43,7 @@
                 <input type="text" required bind:value={departure} name="from" placeholder="start typing names to search">
             </div>
 
-            <p class="arrow">🡆</p>
+            <p class="arrow">⇌</p>
 
             <div class="arrival">
                 <label for="to">Arriving at? (Airport Code)</label>
@@ -56,6 +56,9 @@
                 {#if (departure != '') }
                     <div class="autocomplete  ">
                         {#each departureResults.slice(0,5) as a}
+                            <!-- svelte-ignore a11y-click-events-have-key-events -->
+                            <!-- svelte-ignore a11y-no-static-element-interactions -->
+                            <!-- svelte-ignore a11y-missing-attribute -->
                             <a on:click={() => {departure = a.iata_code}} class="autocompleted" value="{a.iata_code}">{a.name}</a>
                         {/each}
                     </div>
@@ -66,6 +69,9 @@
                 {#if (arrival != '') }
                     <div class="autocomplete  ">
                         {#each arrivalResults.slice(0, 5) as a}
+                            <!-- svelte-ignore a11y-click-events-have-key-events -->
+                            <!-- svelte-ignore a11y-no-static-element-interactions -->
+                            <!-- svelte-ignore a11y-missing-attribute -->
                             <a on:click={() => {arrival = a.iata_code;}} class="autocompleted" value="{a.iata_code}">{a.name}</a>
                         {/each}
                     </div>

@@ -35,7 +35,7 @@
         <!-- <p class="theme">Theme</p> -->
     </div>
     <div class="progress-container w-full">
-        <div class="progress" style="width: {getPercent($infoStore.stage)}%"><p on:click={goBack} class="back inline">⬅ Back | </p> {getPercent($infoStore.stage)}%</div>
+        <div class="progress" style="width: {getPercent($infoStore.stage)}%"><p on:click={goBack} class="back inline">⮌</p> {getPercent($infoStore.stage)}%</div>
     </div>
 
     <div class="formContainer">
