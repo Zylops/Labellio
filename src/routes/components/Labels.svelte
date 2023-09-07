@@ -2,7 +2,8 @@
     import Label from './Label.svelte';
 
     import { PUBLIC_URL, PUBLIC_QR_API } from '$env/static/public'
-    import { infoStore } from '$lib/info.js'
+    import { infoStore } from '$lib/info'
+    import { rgb } from '$lib/themes'
 
     let flightInfo = $infoStore.flightInfo
 
@@ -19,7 +20,8 @@
     }
 
     function generateQR(passenger) {
-        let qr = PUBLIC_QR_API + generateUrl(passenger, flightInfo)
+        let api = PUBLIC_QR_API.replace('INSERT', rgb[passenger.theme])
+        let qr = api + generateUrl(passenger, flightInfo)
         console.log(qr)
         return qr
     }

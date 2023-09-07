@@ -1,12 +1,15 @@
 <script>
-  import { infoStore } from '$lib/info'
+    import { infoStore } from '$lib/info'
+    import { rgb } from '$lib/themes'
     import { onMount } from 'svelte';
 
-    $: passengers = [{name: '', phone: '', email: ''}];
+    let themes = Object.keys(rgb)
+
+    $: passengers = [{name: '', phone: '', email: '', theme: 'stone'}];
     $: saved = [];
 
     function addTraveler() {
-        passengers = [{name: '', phone: '', email: ''}, ...passengers]
+        passengers = [{name: '', phone: '', email: '', theme: 'stone'}, ...passengers]
     }
 
     function getPassengers() {
@@ -35,11 +38,11 @@
         infoStore.update((d) => {
             let copy = d;
             copy.passengers = passengers
-            copy.stage = 2;
             copy.passengers.forEach((p) => {
                 p.phone = p.phone.trim()
                 p.email = p.email.trim()
             })
+            copy.stage = 2;
             return copy
         })
     }
@@ -71,7 +74,11 @@
             <form class="mt-2">
                 <div class="flex justify-between place-items-center">
                     <h2 class="subtitle mb-2 mt-2">Traveler {passengers.indexOf(p)}</h2>
-                    <p on:click={() => {removePassenger(i)}} class="opacity-75 hover:opacity-100 cursor-pointer transition">❌</p>
+                    <div class="actions">
+                        <!-- svelte-ignore a11y-click-events-have-key-events -->
+                        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+                        <p on:click={() => {removePassenger(i)}} class="opacity-75 hover:opacity-100 cursor-pointer transition">❌</p>
+                    </div>
                 </div>
 
                 <details class="my-2">
@@ -101,6 +108,15 @@
                         <label for="email">Email</label>
                         <input type="email" bind:value={p.email} name="email">
                     </div>
+                </div>
+
+                <div class="theme mt-2">
+                    <label for="theme">Label Theme</label>
+                    <select name="theme" class="bg-{p.theme}-600 mt-2" bind:value={p.theme}>
+                        {#each themes as theme}
+                            <option class="bg-{theme}-600" value="{theme}">{theme}</option>
+                        {/each}
+                    </select>
                 </div>
             </form>
         </div>

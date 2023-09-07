@@ -7,8 +7,6 @@
     import AddTravellers from './components/AddTravellers.svelte';
     import NumberOfBags from './components/NumberOfBags.svelte';
 
-    $infoStore.stage = 0;
-
     function goBack() {
         if ($infoStore.stage != 0) {
             infoStore.update((d) => {
@@ -23,9 +21,6 @@
         let percent = Math.round(((num+1)/4)*100)
         return percent;
     }
-
-    
-
     
 </script>
 
