@@ -4,7 +4,6 @@
     import { PUBLIC_URL, PUBLIC_QR_API } from '$env/static/public'
     import { infoStore } from '$lib/info'
     import { rgb } from '$lib/themes'
-    import Header from './Header.svelte';
 
     let flightInfo = $infoStore.flightInfo
 
@@ -29,8 +28,8 @@
 
 <div class="preprint mb-16 print:hidden">
     <div class="disclaimers mt-8">
-        <p class="text-center text-white font-extralight">Labels may look wierd as they are not meant to be viewed on sizes bigger than standard paper sizes.</p>
-        <p class="text-center text-white opacity-25 font-extralight text-sm">Please wait until the QR is generated.</p>
+        <p class="text-center text-white font-extralight">Hit Ctrl + P or the Print button below to print out your labels.</p>
+        <p class="text-center text-white font-extralight text-sm opacity-25">Please wait until the QR is generated.</p>
     </div>
 
     <div class="flex justify-center p-4 gap-4">
@@ -45,10 +44,10 @@
         
 </div>
 
-<div class="wrap">
+<div class="wrap grid grid-cols-2 print:block gap-4 m-8">
     {#each $infoStore.passengers as p}
         {#each Array($infoStore.tags) as _}
-            <Label passenger={p} flightInfo={flightInfo} url="{generateQR(p)}"></Label>
+            <Label passenger={p} flightInfo={flightInfo} qrUrl="{generateQR(p)}" url="{PUBLIC_URL}"></Label>
         {/each}
     {/each}
 </div>

@@ -7,5 +7,5 @@ export const infoStore = writable({
     }],
     tags: 1,
     theme: 'stone',
-    stage: 0
+    stage: 3
 });

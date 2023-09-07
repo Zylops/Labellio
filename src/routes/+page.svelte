@@ -24,14 +24,14 @@
     
 </script>
 
-<div class="grid grid-cols-1 place-items-center">
+<div class="grid grid-cols-1 place-items-center" class:print:hidden={$infoStore.stage == 3}>
     <div><Header/></div>
         
     <div class="flex justify-between w-2/4 mb-2 text-white text-sm font-extralight ">
         <!-- <p class="theme">Theme</p> -->
     </div>
     <div class="progress-container w-full">
-        <div class="progress" in:fly style="width: {getPercent($infoStore.stage)}%"><p on:click={goBack} class="back inline">⮌</p> {getPercent($infoStore.stage)}%</div>
+        <div class="progress" style="width: {getPercent($infoStore.stage)}%"><p on:click={goBack} class="back inline">⮌</p> {getPercent($infoStore.stage)}%</div>
     </div>
 </div>
 

@@ -54,7 +54,7 @@
         {#if autocomplete}
             <div class="completers flex justify-between gap-2">
                 {#if (departure != '') }
-                    <div class="autocomplete  ">
+                    <div class="autocomplete">
                         {#each departureResults.slice(0,5) as a}
                             <!-- svelte-ignore a11y-click-events-have-key-events -->
                             <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -67,7 +67,7 @@
                 <p></p>
 
                 {#if (arrival != '') }
-                    <div class="autocomplete  ">
+                    <div class="autocomplete">
                         {#each arrivalResults.slice(0, 5) as a}
                             <!-- svelte-ignore a11y-click-events-have-key-events -->
                             <!-- svelte-ignore a11y-no-static-element-interactions -->
