@@ -4,8 +4,8 @@
 
 <p align="center">
     <img src="https://img.shields.io/github/license/Zylops/Labellio">
-	<a href="https://GitHub.com/Zylops/Labellio/graphs/commit-activity"><img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" /></a>
-	<a href="https://GitHub.com/Zylops/Labellio/issues/"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/Zylops/Labellio.svg" /></a>
+	<a href="https://gitHub.com/Zylops/Labellio/graphs/commit-activity"><img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" /></a>
+	<a href="https://gitHub.com/Zylops/Labellio/issues/"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/Zylops/Labellio.svg" /></a>
     <img src="https://img.shields.io/badge/framework-svelte-orange">
 	<a href="https://github.com/Zylops/Labellio"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Zylops/Labellio?style=social" /></a>
 </p>
