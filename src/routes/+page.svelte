@@ -24,20 +24,22 @@
     
 </script>
 
-<div class="grid grid-cols-1 place-items-center" class:print:hidden={$infoStore.stage == 3}>
+<div class="center-hv" class:print:hidden={$infoStore.stage == 3}>
     <div><Header/></div>
         
     <div class="flex justify-between w-2/4 mb-2 text-white text-sm font-extralight ">
         <!-- <p class="theme">Theme</p> -->
     </div>
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <div class="progress-container w-full">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="progress" style="width: {getPercent($infoStore.stage)}%"><p on:click={goBack} class="back inline">⮌</p> {getPercent($infoStore.stage)}%</div>
     </div>
 </div>
 
 {#if $infoStore.stage != 3}
 
-<main class="grid grid-cols-1 place-items-center">
+<main class="center-hv">
 
     <div class="formContainer">
         {#if $infoStore.stage == 0}

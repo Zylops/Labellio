@@ -28,12 +28,10 @@
     }
 
     function switchDestination() {
-        console.log(arrival, departure)
         let arrCopy = arrival
         let depsCopy = departure
         arrival = depsCopy
         departure = arrCopy
-        console.log(arrival, departure)
     }
 
     $: getArrival(arrival);
@@ -52,6 +50,8 @@
                 <input type="text" required bind:value={departure} name="from" placeholder="start typing names to search">
             </div>
 
+            <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
             <p class="arrow" on:click={switchDestination}>⇌</p>
 
             <div class="arrival">

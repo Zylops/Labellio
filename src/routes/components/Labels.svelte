@@ -1,28 +1,10 @@
 <script>
     import Label from './Label.svelte';
 
-    import { PUBLIC_URL, PUBLIC_QR_API } from '$env/static/public'
+    import { PUBLIC_URL } from '$env/static/public'
     import { infoStore } from '$lib/info'
-    import { rgb } from '$lib/themes'
 
     let flightInfo = $infoStore.flightInfo
-
-    function generateUrl(passenger, flightInfo) {
-        let url = PUBLIC_URL + '/info'
-        url = url + '?flightNo=' + flightInfo.flightNo
-        url = url + '&from=' + flightInfo.departure
-        url = url + '&to=' + flightInfo.arrival
-        url = url + '&name=' + passenger.name
-        url = url + '&phone=' + passenger.phone
-        url = url + '&email=' + passenger.email
-        return encodeURIComponent(url)
-    }
-
-    function generateQR(passenger) {
-        let api = PUBLIC_QR_API.replace('INSERT', rgb[passenger.theme])
-        let qr = api + generateUrl(passenger, flightInfo)
-        return qr
-    }
 
 </script>
 
@@ -47,7 +29,7 @@
 <div class="wrap grid grid-cols-2 print:block gap-4 m-8">
     {#each $infoStore.passengers as p}
         {#each Array($infoStore.tags) as _}
-            <Label passenger={p} flightInfo={flightInfo} qrUrl="{generateQR(p)}" url="{PUBLIC_URL}"></Label>
+            <Label passenger={p} flightInfo={flightInfo} url="{PUBLIC_URL}"></Label>
         {/each}
     {/each}
 </div>

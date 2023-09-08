@@ -19,7 +19,6 @@
 
             
             answer = answer.filter((a) => a != "")
-            console.log(answer)
             
             answer.forEach((a, i) => {
                 answer[i] = JSON.parse(a)
@@ -89,7 +88,10 @@
                         </div>           
                     </summary>
                     <div class="saved">
+                        <!-- svelte-ignore a11y-missing-attribute -->
                         {#each saved as s}
+                            <!-- svelte-ignore a11y-click-events-have-key-events -->
+                            <!-- svelte-ignore a11y-no-static-element-interactions -->
                             <a class="saved-entry" on:click={() => {select(i, s)}}>{s.name}</a>
                         {/each}
                     </div>
