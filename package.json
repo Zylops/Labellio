@@ -1,6 +1,6 @@
 {
-  "name": "labellio-v2",
-  "version": "0.0.1",
+  "name": "labellio",
+  "version": "1.9.0",
   "private": true,
   "scripts": {
     "dev": "vite dev",
