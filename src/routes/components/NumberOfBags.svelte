@@ -27,7 +27,7 @@
 
 <div class="card">
     <h1 class="card-title">Finalize ✔</h1>
-    <form>
+    <form on:submit|preventDefault>
         <label for="amount">How many labels do you need per passenger?</label>
         <input type="number" bind:value={tags} name="amount">
 

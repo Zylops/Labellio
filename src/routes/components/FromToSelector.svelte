@@ -41,7 +41,7 @@
 
 <div class="flightInfo card">
     <h3 class="card-title">Flight Info ✈</h3>
-    <form class="mt-4">
+    <div class="mt-4">
         <label for="flightNo">Flight Number? (IATA Code)</label>
         <input type="text" required bind:value={flightNo} name="flightNo" placeholder="(eg. AB123)">
         <div class="airport mt-2 md:flex justify-between gap-2">
@@ -87,5 +87,5 @@
         {/if}
 
         <button class="mt-4" on:click={pushInfo}>Next</button>
-    </form>
+    </div>
 </div>
