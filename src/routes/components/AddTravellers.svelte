@@ -2,14 +2,15 @@
     import { infoStore } from '$lib/info'
     import { rgb } from '$lib/themes'
     import { onMount } from 'svelte';
+    import { flip } from 'svelte/animate';
 
     let themes = Object.keys(rgb)
 
-    $: passengers = [{name: '', phone: '', email: '', theme: 'stone'}];
+    $: passengers = [{id: 1, name: '', phone: '', email: '', theme: 'stone'}];
     $: saved = [];
 
     function addTraveler() {
-        passengers = [{name: '', phone: '', email: '', theme: 'stone'}, ...passengers]
+        passengers = [{id: passengers.length + 1, name: '', phone: '', email: '', theme: 'stone'}, ...passengers]
     }
 
     function getPassengers() {
@@ -67,12 +68,12 @@
         <button on:click={addTraveler} class="w-1/3">+1</button>
     </div>
 
-    {#each passengers as p, i}
-        <div class="add sub-card mt-4">
+    {#each passengers as p, i (p.id)}
+        <div class="add sub-card mt-4" animate:flip={{duration: 800}}>
             
             <form class="mt-2">
                 <div class="flex justify-between place-items-center">
-                    <h2 class="subtitle mb-2 mt-2">Traveler {passengers.indexOf(p)}</h2>
+                    <h2 class="subtitle mb-2 mt-2">Traveler {p.id}</h2>
                     <div class="actions">
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
                         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
@@ -80,7 +81,7 @@
                     </div>
                 </div>
 
-                <details class="my-2">
+                <details class="my-2" >
                     <summary>
                         <div class="text inline">
                             <p class="inline">Show saved passengers?</p>
