@@ -1,5 +1,5 @@
 <p align="center">
-<a href="/"><img style="width: 80%;" src="https://github.com/Zylops/Labellio/blob/master/static/labellio_white.png"/></a>
+<a href="https://labellio.vercel.app"><img style="width: 80%;" src="https://github.com/Zylops/Labellio/blob/master/static/labellio_white.png"/></a>
 </p>
 
 <p align="center">
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-Labellio is a web application developed with SvelteKit, designed to simplify the lives of travelers. It allows users to effortlessly create custom labels that can be attached to luggage boxes and other travel essentials. Recently, the project has been rewritten from Svelte to SvelteKit for enhanced performance and maintainability.
+Labellio is a web application developed with SvelteKit, designed to simplify the lives of travelers. It allows users to effortlessly create custom labels that can be attached to luggage boxes and other travel essentials. Recently, the project has been rewritten from Svelte to SvelteKit for enhanced performance and maintainability, and available at <a href="https://labellio.vercel.app">labellio.vercel.app</a>
 </p>
 
 ---
@@ -26,10 +26,10 @@ Labellio is a web application developed with SvelteKit, designed to simplify the
 - There's a functional progress bar now, which can be used to go back and edit your label from any stage of creation.
 - Print dialogue can now be prompted from UI.
 - Each added traveler can now have a theme for their labels, for easier identification if printed in color.
+- Now available at [`https://labellio.vercel.app`](labellio.vercel.app).
 ---
 
 ## TODO ✅
-- [ ] Hosting 
 - [ ] Label reporting and status
 - [ ] Local information from both airports(?)
 - [ ] Adding transit routes
