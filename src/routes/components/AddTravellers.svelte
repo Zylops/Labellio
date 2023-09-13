@@ -93,7 +93,7 @@
                         <summary>
                             <div class="text inline">
                                 <p class="inline">Show saved passengers?</p>
-                                <p class="text-xs opacity-50" for="`">Information is loaded from previously generated labels that have been saved.</p>
+                                <p class="text-xs opacity-50">Information is loaded from previously generated labels that have been saved.</p>
                             </div>
                         </summary>
                         <div class="saved">
