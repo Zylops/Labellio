@@ -1,0 +1,2 @@
+PUBLIC_URL="http://localhost:5173"
+PUBLIC_QR_API="https://api.qrserver.com/v1/create-qr-code/?color=INSERT&size=100x100&data="
