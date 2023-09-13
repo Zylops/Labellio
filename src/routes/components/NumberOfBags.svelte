@@ -37,7 +37,7 @@
             </div>
             <div class="text">
                 <p>Save information for later?</p>
-                <p class="text-xs opacity-50" for="`">Information is only stored locally, check this if you need to generate labels often.</p>
+                <p class="text-xs opacity-50">Information is only stored locally, check this if you need to generate labels often.</p>
             </div>
         </div>
 
